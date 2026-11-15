@@ -1,1 +1,174 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#f5f7fa">
 
+  <title>جارٍ الانتقال إلى MTN Cash</title>
+
+  <!-- Google Analytics 4 -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-WCTWYT8GGT">
+  </script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-WCTWYT8GGT');
+  </script>
+
+  <!-- التحويل عند تعطيل JavaScript -->
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://cash.mtnsyr.com/">
+  </noscript>
+
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f5f7fa;
+      color: #172033;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 440px;
+      padding: 36px 24px;
+      border: 1px solid #e8ecf2;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 16px 48px rgb(23 32 51 / 6%);
+      text-align: center;
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      margin: 0 auto 24px;
+      border: 3px solid #edf0f5;
+      border-top-color: #526581;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+    }
+
+    p {
+      margin: 12px 0;
+      line-height: 1.8;
+      color: #596478;
+    }
+
+    .destination {
+      font-size: 0.95rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 24px;
+      border-radius: 10px;
+      background: #172033;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background: #2c3e5b;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #3675d3;
+      outline-offset: 4px;
+    }
+
+    small {
+      display: block;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #edf0f5;
+      color: #687386;
+      line-height: 1.8;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .spinner {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main aria-labelledby="page-title">
+    <div class="spinner" aria-hidden="true"></div>
+
+    <h1 id="page-title">جارٍ الانتقال إلى MTN Cash</h1>
+
+    <p role="status">سيتم تحويلك تلقائيًا إلى:</p>
+    <p class="destination" dir="ltr">https://cash.mtnsyr.com/</p>
+
+    <a href="https://cash.mtnsyr.com/">
+      متابعة إذا لم يتم التحويل
+    </a>
+
+    <small>
+      هذه صفحة تحويل مستقلة وليست الموقع الرسمي لـ MTN.
+      تستخدم Google Analytics لقياس الزيارات، ولا تطلب بيانات حسابك.
+    </small>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const destination = 'https://cash.mtnsyr.com/';
+
+      // محاولة تسجيل الحدث دون انتظار تحميل Analytics.
+      // قد لا يُرسل الحدث بسبب التحويل الفوري.
+      try {
+        gtag('event', 'mtn_cash_redirect', {
+          send_to: 'G-WCTWYT8GGT',
+          destination: destination,
+          transport_type: 'beacon'
+        });
+      } finally {
+        // التحويل الفوري، مع إزالة صفحة التحويل من سجل الرجوع.
+        window.location.replace(destination);
+      }
+    })();
+  </script>
+</body>
+</html>
